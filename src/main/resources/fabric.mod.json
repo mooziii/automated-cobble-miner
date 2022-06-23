@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "name": "Automated Cobble Miner",
+  "id": "automated-cobble-miner",
+  "version": "${version}",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.obsilabor.automatedcobbleminer.AutomatedCobbleMiner"
+    ]
+  },
+  "depends": {
+    "fabric": "*"
+  },
+  "license": "MIT",
+  "description": "A nice and simple mod for fabric & quilt that automaticially mines blocks at a given position. Quite useful for skyblock or any cobblestone generators",
+  "icon": "assets/automated-cobble-miner/icon.png",
+  "authors": [
+    "mooziii"
+  ],
+  "contact": {
+    "sources": "https://github.com/mooziii/automated-cobble-miner",
+    "issues": "https://github.com/mooziii/automated-cobble-miner/issues"
+  }
+}
