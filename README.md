@@ -1,5 +1,5 @@
 # automated-cobble-miner
-A nice and simple mod for fabric & quilt that automaticially mines blocks at a given position. Quite useful for skyblock or any cobblestone generators.
+A nice and simple mod for fabric & quilt that automatically  mines blocks at a given position. Quite useful for skyblock or any cobblestone generators.
 
 This mod only requires the fabric api to run, just drag both files into your mods folder **OR** install them using [pacmc](https://github.com/jakobkmar/pacmc/):
 
