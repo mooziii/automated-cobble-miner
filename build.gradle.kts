@@ -2,6 +2,8 @@ plugins {
     id("fabric-loom") version "0.12-SNAPSHOT"
     id("io.github.juuxel.loom-quiltflower") version "1.7.3"
     id("org.quiltmc.quilt-mappings-on-loom") version "4.2.0"
+    id("com.modrinth.minotaur") version "2.+"
+    id("com.matthewprenger.cursegradle") version "1.4.0"
 }
 
 group = "me.obsilabor"
@@ -35,4 +37,46 @@ tasks {
             expand(props)
         }
     }
+    named("curseforge") {
+        onlyIf {
+            System.getenv("CURSEFORGE_TOKEN") != null
+        }
+        dependsOn(remapJar)
+    }
+}
+
+modrinth {
+    token.set(System.getenv("MODRINTH_TOKEN"))
+    projectId.set("FJKMA4MM")
+    versionNumber.set(project.version.toString())
+    versionType.set("release")
+    gameVersions.addAll(listOf("1.18.2", "1.18.1", "1.18.0"))
+    loaders.add("fabric")
+    loaders.add("quilt")
+    dependencies {
+        required.project("P7dR8mSH")
+    }
+
+    uploadFile.set(tasks.remapJar.get())
+}
+
+curseforge {
+    project(closureOf<CurseProject> {
+        apiKey = System.getenv("CURSEFORGE_TOKEN")
+        mainArtifact(tasks.remapJar.get())
+
+        id = "636384"
+        releaseType = "release"
+        addGameVersion("1.18")
+        addGameVersion("Java 17")
+        addGameVersion("Fabric")
+        addGameVersion("Quilt")
+
+        relations(closureOf<CurseRelation> {
+            requiredDependency("fabric-api")
+        })
+    })
+    options(closureOf<Options> {
+        forgeGradleIntegration = false
+    })
 }
