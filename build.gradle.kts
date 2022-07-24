@@ -54,7 +54,7 @@ modrinth {
     projectId.set("FJKMA4MM")
     versionNumber.set(project.version.toString())
     versionType.set("release")
-    gameVersions.addAll(listOf("1.18.2", "1.18.1", "1.18.0"))
+    gameVersions.addAll(listOf("1.18.2", "1.18.1", "1.18"))
     loaders.add("fabric")
     loaders.add("quilt")
     dependencies {
@@ -71,6 +71,8 @@ curseforge {
 
         id = "636384"
         releaseType = "release"
+        addGameVersion("1.18.2")
+        addGameVersion("1.18.1")
         addGameVersion("1.18")
         addGameVersion("Java 17")
         addGameVersion("Fabric")
