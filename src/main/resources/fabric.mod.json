@@ -13,7 +13,7 @@
     "fabric": "*"
   },
   "license": "MIT",
-  "description": "A nice and simple mod for fabric & quilt that automaticially mines blocks at a given position. Quite useful for skyblock or any cobblestone generators",
+  "description": "A nice and simple mod for fabric & quilt that automatically mines blocks at a given position. Quite useful for skyblock or any cobblestone generators",
   "icon": "assets/automated-cobble-miner/icon.png",
   "authors": [
     "mooziii"

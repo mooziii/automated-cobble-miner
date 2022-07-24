@@ -5,20 +5,20 @@ plugins {
 }
 
 group = "me.obsilabor"
-version = "1.0.0+mc1.19"
+version = "1.0.0+mc1.18.2"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.19")
+    minecraft("com.mojang:minecraft:1.18.2")
     mappings(loom.layered {
-        addLayer(quiltMappings.mappings("org.quiltmc:quilt-mappings:1.19+build.1:v2"))
+        addLayer(quiltMappings.mappings("org.quiltmc:quilt-mappings:1.18.2+build.24:v2"))
         officialMojangMappings()
     })
     modImplementation("net.fabricmc:fabric-loader:0.14.8")
-    modImplementation("net.fabricmc.fabric-api:fabric-api:0.56.1+1.19")
+    modImplementation("net.fabricmc.fabric-api:fabric-api:0.58.0+1.18.2")
 }
 
 tasks {

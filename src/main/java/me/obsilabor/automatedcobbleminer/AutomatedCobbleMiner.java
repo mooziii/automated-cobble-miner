@@ -10,6 +10,7 @@ import net.minecraft.client.gui.components.toasts.SystemToast;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -38,7 +39,7 @@ public class AutomatedCobbleMiner implements ClientModInitializer {
                         minecraft.getToasts().addToast(new SystemToast(
                                 SystemToast.SystemToastIds.PERIODIC_NOTIFICATION,
                                 Component.nullToEmpty("Automated Cobble Miner"),
-                                Component.translatable("toast.toggledOn")
+                                new TranslatableComponent("toast.toggledOn")
                         ));
                     }
                 } else {
@@ -46,7 +47,7 @@ public class AutomatedCobbleMiner implements ClientModInitializer {
                     minecraft.getToasts().addToast(new SystemToast(
                             SystemToast.SystemToastIds.PERIODIC_NOTIFICATION,
                             Component.nullToEmpty("Automated Cobble Miner"),
-                            Component.translatable("toast.toggledOff")
+                            new TranslatableComponent("toast.toggledOff")
                     ));
                 }
             }
